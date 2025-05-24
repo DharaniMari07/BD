@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, Surya!</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background: linear-gradient(270deg, #ffe6f0, #e6f7ff, #fff0f5, #f0fff0);
+      background-size: 800% 800%;
+      animation: backgroundAnimation 20s ease infinite, fadeIn 4s ease;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes backgroundAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 850px;
+      margin: auto;
+      border: 5px solid;
+      border-image: linear-gradient(to right, #ff66a3, #66ccff, #ffcc66, #cc66ff) 1;
+      border-radius: 25px;
+      background: #ffffffcc;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.4);
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff1493;
+      text-shadow: 2px 2px #ffe6f0;
+      animation: slideIn 1s ease-out;
+      font-family: Georgia, serif;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+
+    .emoji {
+      display: inline-block;
+      animation: floatEmoji 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes floatEmoji {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+
+    .centered-img {
+      display: block;
+      margin: 20px auto;
+      max-width: 200px;
+      border-radius: 20px;
+      animation: bounce 2s infinite alternate;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }
+
+    .message {
+      font-size: 1.2em;
+      margin: 20px 0;
+      font-family: Georgia, serif;
+    }
+
+    .rainbow-text {
+      background: linear-gradient(to right, #ff66a3, #66ccff, #ffcc66, #cc66ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      font-family: Georgia, serif;
+    }
+
+    .surprise {
+      margin-top: 30px;
+    }
+
+    .surprise-btn {
+      background: linear-gradient(45deg, #ff66a3, #ff1493);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
+      color: white;
+      padding: 15px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      animation: pulse 1.5s infinite;
+      font-family: Georgia, serif;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .surprise-btn:hover {
+      background-color: #ff3385;
+    }
+
+    .hidden {
+      display: none;
+    }
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.polaroid {
+  background: #fff;
+  border: 2px solid #ddd;
+  padding: 10px;
+  width: 120px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+  font-size: 0.9em;
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+  font-family: Georgia, serif;
+}
+
+.polaroid:hover {
+  transform: rotate(2deg) scale(1.05);
+}
+
+.note {
+  background: #ffe6f0;
+  color: #ff1493;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 10px;
+  display: inline-block;
+  animation: floatNote 3s ease-in-out infinite alternate;
+  font-family: Georgia, serif;
+}
+
+@keyframes floatNote {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+.spin-btn {
+  background: #66ccff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-family: Georgia, serif;
+}
+
+    #surpriseMessage {
+      background: #fff0f5;
+      padding: 25px;
+      margin-top: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      font-size: 1.1em;
+      line-height: 1.6em;
+      font-family: Georgia, serif;
+    }
+
+    #typedLetter {
+      white-space: pre-wrap;
+      font-family: Georgia, serif;
+    }
+
+    #giftMessage {
+      margin-top: 15px;
+      background: #fffaf0;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: Georgia, serif;
+    }
+.bouncing-gift {
+  animation: bounceGift 2s infinite alternate ease-in-out;
+}
+
+@keyframes bounceGift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+
+    canvas#floatingCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎶 Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.orangefreesounds.com/wp-content/uploads/2021/08/Happy-birthday-piano.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="container">
+    <h1><span class="emoji">🎉</span> Happy Birthday, Surya! <span class="emoji">🎉</span></h1>
+
+    <img src="https://img.freepik.com/premium-vector/cartoon-illustration-cute-happy-birthday-cake-with-party-hat-fruit_150234-82042.jpg?w=360" class="centered-img">
+
+    <p class="message">Wishing you all the happiness in the world! 🎂🥳</p>
+    <p class="message">May your day be filled with love, laughter, and joy! 💖</p>
+
+    <img src="https://img.freepik.com/premium-photo/cartoon-duck-with-birthday-hat-balloons-sitting-ground-generative-ai_900321-61518.jpg" alt="Cute Duck" class="centered-img waddling-duck">
+    <p class="message rainbow-text">🎈✨ You are truly one of a kind, idiot! ✨🎈</p>
+
+    <div class="surprise">
+      <button class="surprise-btn" onclick="revealSurprise()">Click for a Surprise! 🎁</button>
+      <div id="surpriseMessage" class="hidden">
+        <h3>💌 Letter from me:</h3>
+        <p id="typedLetter"></p>
+
+        <div id="virtualGift">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsl0s4sRaarxSwco9zt9hSKGekDUZiM0lv_g&s" style="width:150px; cursor:pointer;" id="openGift" class="bouncing-gift"/>
+          <div id="giftMessage" class="hidden">
+            🎁 You just opened a box full of love and laughter! 💞<br>
+            Surprise🎈 God was really on my side when he gave me a best friend like you.In today's world, it's hard to find a true and caring friend. You mean so much more to me than you think.I'm scared to lose you; that much I became attached to you. I hope we will continue our friendship until we see our white hairs, lol. No matter how hard life gets, remember — there will always be a girl who supports you, haunts you like a ghost (hehe),im so grateful to ur mom that she gave birth to a responsible,caring,kind,loving human being like u.Everyone can make me smile but not everyone can make me happy like u do.u r like a brother to me from another mom.wish we could continue our beautiful bond forever.In every life i want us to be bestfrds. Happiest Bday eruma🎈
+          </div>
+        </div>
+
+       
+        <!-- 🌌 Memory Lane Gallery -->
+        <div id="memoryLane" class="hidden">
+          <h3>🌌 A Walk Down Memory Lane...</h3>
+          <div class="gallery">
+            <div class="polaroid">💬 Our Hindhi tution memeories 🥹</div>
+            <div class="polaroid">😂 That stupid inside joke(dhaara beeethi hoi,gaanae ke bojan mein uplabdh naahin gaathae hai kya lol</div>
+            <div class="polaroid">❤️ Your support means everything</div>
+          </div>
+        </div>
+
+        <!-- 🎮 Spin the Wheel -->
+        <div id="spinSection" class="hidden">
+          <h3>🎮 Spin the Compliment Wheel!</h3>
+          <button class="spin-btn" onclick="spinWheel()">🎡 Spin!</button>
+          <p id="wheelResult"></p>
+        </div>
+
+        <!-- 🧠 Mind Reader -->
+        <div id="mindReader" class="hidden">
+          <h3>🔮 Mind Reader Activated...</h3>
+          <p>Hmm... you're thinking... “aww im blessed to hv a frd like u .” 💖ryt? Gotchu (well u shd😏😌.</p>
+        </div>
+
+        <!-- 💌 Flying  Notes -->
+        <div id="Notes" class="hidden">
+          <h3>💌 Messages Flying to You</h3>
+          <div class="note">You matter.</div>
+          <div class="note">Stay strong.</div>
+          <div class="note">You are enough.</div>
+          <div class="note">Forever friends.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="floatingCanvas"></canvas>
+
+  <script>
+    const letterText = `Dear idiot,
+
+I know sometimes life can be tough, and you might feel like you're alone, but remember — you are never alone.
+
+You bring light to those around you, especially me well i dont need to explain since ur name itself describes it lol. I’m so lucky to have a friend like you.
+
+May this birthday bring you all the happiness you deserve and more.
+
+Stay amazing.
+
+— Your forever idiot friend 💖`;
+
+    const typedLetter = document.getElementById('typedLetter');
+    const surpriseMessage = document.getElementById('surpriseMessage');
+    const memoryLane = document.getElementById('memoryLane');
+    const spinSection = document.getElementById('spinSection');
+    const mindReader = document.getElementById('mindReader');
+    const Notes = document.getElementById('Notes');
+    const openGift = document.getElementById('openGift');
+    const giftMessage = document.getElementById('giftMessage');
+
+    function typeWriter(text, i, callback) {
+      if (i < text.length) {
+        typedLetter.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(() => typeWriter(text, i, callback), 50);
+      } else if (callback) {
+        callback();
+      }
+    }
+
+    function revealSurprise() {
+      const surpriseBtn = document.querySelector('.surprise-btn');
+      surpriseBtn.style.display = 'none';
+      surpriseMessage.classList.remove('hidden');
+      typeWriter(letterText, 0, () => {
+        memoryLane.classList.remove('hidden');
+        spinSection.classList.remove('hidden');
+        mindReader.classList.remove('hidden');
+        Notes.classList.remove('hidden');
+      });
+    }
+
+    openGift.addEventListener('click', () => {
+      openGift.style.display = 'none';
+      giftMessage.classList.remove('hidden');
+    });
+
+    const compliments = [
+      "You're insanely kind!",
+      "Your smile is infectious.",
+      "You light up every room.",
+      "You make the world better.",
+      "Your laugh is the best sound(like a bandar hehe).",
+      "You're an amazing friend."
+    ];
+
+    function spinWheel() {
+      const result = compliments[Math.floor(Math.random() * compliments.length)];
+      document.getElementById('wheelResult').textContent = result;
+    }
+
+    // Floating heart animation on canvas
+    const canvas = document.getElementById('floatingCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let hearts = [];
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Heart {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = height + 20;
+        this.size = 10 + Math.random() * 20;
+        this.speed = 1 + Math.random() * 3;
+        this.opacity = 0.5 + Math.random() * 0.5;
+        this.angle = Math.random() * 2 * Math.PI;
+        this.spin = 0.02 + Math.random() * 0.03;
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(this.size/2, -this.size/2, this.size, this.size/3, 0, this.size);
+        ctx.bezierCurveTo(-this.size, this.size/3, -this.size/2, -this.size/2, 0, 0);
+        ctx.fillStyle = `rgba(255,105,180,${this.opacity})`;
+        ctx.fill();
+        ctx.restore();
+      }
+      update() {
+        this.y -= this.speed;
+        this.angle += this.spin;
+        if(this.y < -this.size) {
+          this.x = Math.random() * width;
+          this.y = height + 20;
+          this.size = 10 + Math.random() * 20;
+          this.speed = 1 + Math.random() * 3;
+          this.opacity = 0.5 + Math.random() * 0.5;
+        }
+      }
+    }
+
+    for(let i = 0; i < 30; i++) {
+      hearts.push(new Heart());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      hearts.forEach(heart => {
+        heart.update();
+        heart.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
